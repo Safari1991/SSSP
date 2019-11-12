@@ -1,0 +1,218 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="1561.4">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; line-height: 14.0px; font: 12.0px Helvetica; color: #000000; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- your webpage info goes here --&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Locality-Based Relaxation&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed --&gt;<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- webpage content goes here in the body --&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;div id="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="logo"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h1&gt;Implementing Single Source Shortest Path (SSSP) on GPU&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="nav"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="https://github.com/GPUGraphProcessing/SSSP/archive/master.zip"&gt;Download&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/ul&gt;<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h2&gt;Home&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>We have implemented an algorithm to solve Single Source Shortest Path (SSSP) problem on GPU. Our algorithm is vertex-based, it means we assign threads to vertices in graphs. In fact, we assign one thread to two vertices to increase the workload of each thread. We have used Compressed Sparse Row (CSR) representation as our data structure to store graphs. We introduce the idea of locality-based relaxation where threads assigned to vertices update the distance of neighbor vertices up to k steps. This idea increases the workload of each kernel launch and decreases the total number of iterations of the algorithm. By having a preprocessing phase, we also decrease CPU-GPU communication. Our implementation uses only one atomic operation, one kernel to launch in each iteration of the algorithm and no intra-block synchronization. We have experimented our approach on real-world road network graphs of some cities and regions in the United States.<span class="Apple-converted-space">   </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Please refer to our paper for the details of our method along with the experimental results:</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt; Safari, M., &amp; Ebnenasir, A. (2017, September). Locality-Based Relaxation: An Efficient Method for GPU-Based Computation of Shortest Paths. In International Conference on Topics in Theoretical Computer Science (pp. 43-58). Springer, Cham. &lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/ul&gt;<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>The implementation of our algorithm is publicly available. You can download the implementation in CUDA from Download tab.</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="footer"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Webpage made by &lt;a href="/" target="_blank"&gt;Mohsen Safari&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p1"><span class="s1">///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">contact.html:</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!DOCTYPE html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;html&gt;</span></p>
+<p class="p1"><span class="s1">&lt;head&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- your webpage info goes here --&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;title&gt;Locality-Based Relaxation&lt;/title&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- you should always add your stylesheet (css) in the head tag so that it starts loading before the page html is being displayed --&gt;<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;link rel="stylesheet" href="style.css" type="text/css" /&gt;</span></p>
+<p class="p2"><span class="s1"><span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1">&lt;/head&gt;</span></p>
+<p class="p1"><span class="s1">&lt;body&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">&lt;!-- webpage content goes here in the body --&gt;</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;div id="page"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="logo"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h1&gt;Implementing Single Source Shortest Path (SSSP) on GPU&lt;/h1&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="nav"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="https://github.com/GPUGraphProcessing/SSSP/archive/master.zip"&gt;Download&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;li&gt;&lt;a href="contact.html"&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/ul&gt;<span class="Apple-tab-span">	</span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;h2&gt;Contact&lt;/h2&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Please feel free to contact me if you need more help!</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        <span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span></span>&lt;br&gt; Email: mohsen.safari1991@gmail.com&lt;/br&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;div id="footer"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>Webpage made by &lt;a href="/" target="_blank"&gt;Mohsen Safari&lt;/a&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/p&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/body&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/html&gt;</span></p>
+<p class="p1"><span class="s1">///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">style.css:</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">/*</span></p>
+<p class="p1"><span class="s1">* multi-line comment</span></p>
+<p class="p1"><span class="s1">*/</span></p>
+<p class="p1"><span class="s1">p{ line-height: 1.5em; text-align:justify; }</span></p>
+<p class="p1"><span class="s1">h1, h2, h3, h4{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>color: orange;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>font-weight: normal;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>line-height: 1.1em;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>margin: 0 0 .5em 0;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">h1{ font-size: 2.5em; }</span></p>
+<p class="p1"><span class="s1">h2{ font-size: 1.7em; }</span></p>
+<p class="p1"><span class="s1">a{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>color: black;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>text-decoration: none;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>a:hover,</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>a:active{ text-decoration: underline; }</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">/* you can structure your code's white space so that it is as readable for when you come back in the future or for other people to read and edit quickly */</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">body{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>font-family: arial; font-size: 95%; line-height: 1.2em; width: 100%; margin: 0; background: #eee;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/* you can put your code all in one line like above */</span></p>
+<p class="p1"><span class="s1">#page{ margin: 20px; }</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">/* or on different lines like below */</span></p>
+<p class="p1"><span class="s1">#logo{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>width: 40%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>margin-top: 5px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>font-family: georgia;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>display: inline-block;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">/* but try and be as concise as possible */</span></p>
+<p class="p1"><span class="s1">#nav{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>width: 60%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>text-align: right;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>float: right;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>margin-top: 20px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>#nav ul{}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>#nav ul li{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>display: inline-block;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>height: 62px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>#nav ul li a{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>background: orange;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>color: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>#nav ul li a:hover{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>background-color: #ffb424;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>box-shadow: 0px 1px 1px #666;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>#nav ul li a:active{ background-color: #ff8f00; }</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">#content{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>margin: 50px 0;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>background: white;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>padding: 20px;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>clear: both;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>line-height: 30px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1">#footer{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>border-bottom: 1px #ccc solid;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>margin-bottom: 10px;</span></p>
+<p class="p1"><span class="s1">}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>#footer p{</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>text-align: right;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>text-transform: uppercase;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>font-size: 80%;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span><span class="Apple-tab-span">	</span>color: grey;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-tab-span">	</span>}</span></p>
+<p class="p1"><span class="s1"><br>
+</span></p>
+<p class="p1"><span class="s1">/* multiple styles seperated by a , */</span></p>
+<p class="p1"><span class="s1">#content,</span></p>
+<p class="p1"><span class="s1">ul li a{ box-shadow: 0px 1px 1px #999; }</span></p>
+</body>
+</html>

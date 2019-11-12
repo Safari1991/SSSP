@@ -1,37 +1,3 @@
-## Welcome to GitHub Pages
+## Locality-Based Relaxation: An Efficient Method for GPU-Based Computation of Shortest Paths
 
-You can use the [editor on GitHub](https://github.com/Safari1991/SSSP/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/Safari1991/SSSP/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+We have implemented an algorithm to solve Single Source Shortest Path (SSSP) problem on GPU. Our algorithm is vertex-based, it means we assign threads to vertices in graphs. In fact, we assign one thread to two vertices to increase the workload of each thread. We have used Compressed Sparse Row (CSR) representation as our data structure to store graphs. We introduce the idea of locality-based relaxation where threads assigned to vertices update the distance of neighbor vertices up to k steps. This idea increases the workload of each kernel launch and decreases the total number of iterations of the algorithm. By having a preprocessing phase, we also decrease CPU-GPU communication. Our implementation uses only one atomic operation, one kernel to launch in each iteration of the algorithm and no intra-block synchronization. We have experimented our approach on real-world road network graphs of some cities and regions in the United States.   
